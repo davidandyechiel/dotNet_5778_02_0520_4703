@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace dotNet5778_02_0520_4703
 {
-    class Program
+    enum E_color { Black, Red };
+    public class Cards
     {
-        static void Main(string[] args)
-        {
-
-        }
+      //  private Enum E_color  { Black, Red };
     }
 }
