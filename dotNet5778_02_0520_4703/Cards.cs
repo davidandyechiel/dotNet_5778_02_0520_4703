@@ -8,6 +8,10 @@ namespace dotNet5778_02_0520_4703
     enum E_color { Black, Red };
 
     public class Cards
+
+
+
+
     {
         private E_color color;
         private int num;
