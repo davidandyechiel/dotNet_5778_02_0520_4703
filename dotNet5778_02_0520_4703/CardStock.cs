@@ -29,7 +29,9 @@ namespace dotNet5778_02_0520_4703
         {
             foreach (Player p in players)
             {
-                p.AddCards(players.Length,ref Cards)
+                //I think that the exercise demand that the parameters of the addCards funcion
+                //need to be only Card type
+                p.addCards(players.Length, ref Cards) 
             }
             throw new System.NotImplementedException();
         }

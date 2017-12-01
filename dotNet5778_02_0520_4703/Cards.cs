@@ -5,18 +5,18 @@ using System.Text;
 
 namespace dotNet5778_02_0520_4703
 {
-    enum E_color { Black, Red };
+    public enum E_color { Black, Red };
 
-    public class Cards
-
-
-
-
+    public class Cards : IComparable
     {
         private E_color color;
         private int num;
 
-       
+        public Cards(int num , E_color color)
+        {
+            Num = num;
+            Color = color;
+        }
 
         #region Properties
         public int Num
@@ -24,9 +24,7 @@ namespace dotNet5778_02_0520_4703
             get
             {
                 return num;
-             
             }
-
             set
             {
                 if (value < 2 || value > 14)
@@ -64,10 +62,23 @@ namespace dotNet5778_02_0520_4703
                         return "Ace";
                     default:
                         return num.ToString();
-                }                   
+                }
             }
-         
+
         }
         #endregion
+
+        public override string ToString()
+        {
+            return CardName + " " + Color;
+        }
+
+        #region IComparable Members
+        public int CompareTo(object obj)
+        {
+            return Num.CompareTo(((Cards)obj).num);
+        }
+        #endregion
+
     }
 }
