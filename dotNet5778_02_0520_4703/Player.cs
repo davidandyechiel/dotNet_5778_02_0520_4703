@@ -20,17 +20,21 @@ namespace dotNet5778_02_0520_4703
               return "The player " + name + "has " + hand.LongCount() + " cards:\n" + hand;
         }
 
+        internal void reset()
+        {
+            hand.Clear();
+        }
 
         public bool lose() 
         {
-            if (hand == null)
-                return true;
-            return false;            
+            return (hand == null ? true : false);       
         }
         
         public Cards pickACard()
         {
-            return hand.Dequeue();
+            if (!lose())
+                return hand.Dequeue();
+            return null;
         }
     }
 }
